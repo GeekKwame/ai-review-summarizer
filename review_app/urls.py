@@ -1,0 +1,15 @@
+from django.urls import path
+
+from review_app import views
+
+urlpatterns = [
+    path(
+        "products/<slug:slug>/generate-summary/",
+        views.generate_reviews_summary,
+        name="generate_reviews_summary",
+    ),
+    path("products/", views.list_products, name="list_products"),
+    path("products/<slug:slug>/", views.product_detail, name="product_detail"),
+    path("ask-how-are-you/", views.ask_how_are_you, name="ask_how_are_you"),
+    path("who-are-you/", views.who_are_you, name="who_are_you"),
+]
